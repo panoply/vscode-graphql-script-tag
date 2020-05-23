@@ -1,25 +1,41 @@
-<script>
+<script type="application/markdown">
 
-document.fooo()
+ # H1
+ ## H2
+
+ [I'm an inline-style link](https://www.google.com)
+
+ Emphasis, aka italics, with *asterisks* or _underscores_.
+ Combined emphasis with **asterisks and _underscores_**.
+
+ ```javascript
+ var s = "JavaScript syntax highlighting";
+ alert(s);
+ ```
+
+ ```python
+ s = "Python syntax highlighting"
+ print s
+ ```
+ > Blockquotes are very handy in email to emulate reply text.
+ > This line is part of the same quote.
+
+ 1. First ordered list item
+ 2. Another item
+ ⋅⋅* Unordered sub-list.
+ 1. Actual numbers don't matter, just that it's a number
+ ⋅⋅1. Ordered sub-list
+ 4. And another item.
 
 </script>
 
-<script type="application/graphql">
-  query User($id: ID!)
-    user(id: $id) {
-      name
-      picture
-    }
-  }
-</script>
 
-<script type="application/graphql" id="test" data-attribute>
-    query User($id: ID!)
-    user(id: $id) {
-      name
-      picture
-    }
-  }
+<script type="application/markdown" id="test" data-attribute>
+ ## Hello World
+
+ _italic_
+
+ **bold**
 </script>
 
 
