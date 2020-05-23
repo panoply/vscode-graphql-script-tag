@@ -9,6 +9,12 @@ Syntax highlighting support for HTML `<script></script>` tags using `application
 
 Made available as per request from a developer.
 
+
+## Related Extensions
+
+- [vscode-json-script-tag](https://marketplace.visualstudio.com/items?itemName=sissel.json-script-tag)
+- [vscode-markdown-script-tag](https://marketplace.visualstudio.com/items?itemName=sissel.markdown-script-tag)
+
 ## Example
 
 ```html
