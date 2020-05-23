@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "JSON Script Tag",
+  "scopeName": "source.graphql.embedded",
+  "injectionSelector": "L:text.html -meta.embedded",
+  "patterns": [
+    {
+      "include": "#script-graphql-tag"
+    }
+  ],
+  "repository": {
+    "script-graphql-tag": {
+      "contentName": "meta.embedded.block.graphql.html",
+      "begin": "(<)(script)\\b(?=[^>]*type=(\"application/graphql\"))(?![^/>]*/>\\s*$)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.graphql"
+        },
+        "2": {
+          "name": "entity.name.tag.graphql"
+        }
+      },
+      "end": "(</)(script)(>)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.graphql"
+        },
+        "2": {
+          "name": "entity.name.tag.graphql"
+        },
+        "3": {
+          "name": "punctuation.definition.tag.end.graphql"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#attribute-name"
+        },
+        {
+          "include": "#attribute-value"
+        },
+        {
+          "include": "#source-graphql"
+        }
+      ]
+    },
+    "source-graphql": {
+      "begin": "(>)",
+      "beginCaptures": {
+        "0": {
+          "name": "meta.tag.metadata.graphql.start.graphql"
+        },
+        "1": {
+          "name": "punctuation.definition.tag.end.graphql"
+        }
+      },
+      "end": "(?=</script>)",
+      "endCaptures": {
+        "0": {
+          "name": "meta.tag.metadata.graphql.end.graphql"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.graphql"
+        }
+      ]
+    },
+    "attribute-name": {
+      "name": "entity.other.attribute-name.graphql",
+      "match": "\\b([a-zA-Z\\-:_]+)"
+    },
+    "attribute-value": {
+      "name": "string.quoted.double.graphql",
+      "match": "(\"|').*?(\"|')"
+    }
+  }
+}

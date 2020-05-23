@@ -1,0 +1,34 @@
+<script>
+
+document.fooo()
+
+</script>
+
+<script type="application/graphql">
+  query User($id: ID!)
+    user(id: $id) {
+      name
+      picture
+    }
+  }
+</script>
+
+<script type="application/graphql" id="test" data-attribute>
+    query User($id: ID!)
+    user(id: $id) {
+      name
+      picture
+    }
+  }
+</script>
+
+
+<!-- EVERYTHING WORKS -->
+<script  >
+ document.addEventListener('DOMContentLoaded', this.init.bind(this))
+    document.addEventListener('turbolinks:load', this.load.bind(this))
+    document.addEventListener('turbolinks:visit', this.visit.bind(this))
+    document.addEventListener('turbolinks:before-cache', this.beforecache.bind(this))
+    document.addEventListener('turbolinks:before-render', this.beforerender.bind(this))
+
+</script>
